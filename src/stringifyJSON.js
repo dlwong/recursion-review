@@ -18,7 +18,7 @@ var stringifyJSON = function(obj) {
         for (var i = 0; i < obj.length; i++) {
           newArr.push(stringifyJSON(obj[i]))
         }
-        return '[' + newArr.join(',') + ']';
+        return '[' + newArr + ']';
       } 
       if (obj.length === 0) {
         return `[]`
@@ -34,6 +34,6 @@ var stringifyJSON = function(obj) {
       }
       newArr.push(stringifyJSON(key)+':'+stringifyJSON(obj[key]));
     }
-    return '{' + newArr.join(',') + '}'
+    return '{' + newArr + '}'
   }
 };
