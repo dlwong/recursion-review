@@ -20,12 +20,15 @@ var getElementsByClassName = function(className
 //   }
 
 
+
   function searchNode(node) {
-    if (node.classList && (node.classList.contains(className))) {
+    if (node.classList && node.classList.contains(className)) {
       newArray.push(node)
     }
     if (node.childNodes) {
-      searchNode(node.childNodes)
+      for (var i = 0; i < node.childNodes.length; i++) {
+        searchNode(node.childNodes[i]);
+      }
     }
   }
 
